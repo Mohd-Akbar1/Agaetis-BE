@@ -23,41 +23,93 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+# Employee Management Backend
 
-## Project setup
+A REST API built with NestJS, TypeORM, and PostgreSQL for managing employee records.
 
-```bash
-$ npm install
-```
+## Features
 
-## Compile and run the project
+- Create, read, update, and delete employees
+- Pagination support
+- DTO validation
+- PostgreSQL database integration
+- RESTful API endpoints
 
-```bash
-# development
-$ npm run start
+## Prerequisites
 
-# watch mode
-$ npm run start:dev
+- Node.js
+- npm
+- PostgreSQL
 
-# production mode
-$ npm run start:prod
-```
-
-## Run tests
+## 1. Clone the Repository
 
 ```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+git clone https://github.com/Mohd-Akbar1/Agaetis-BE.git
+cd Agaetis-BE
 ```
 
-## Deployment
+## 2. Install Dependencies
+
+```bash
+npm install
+```
+
+## 3. Configure Environment Variables
+
+Create a `.env` file in the project root and configure your PostgreSQL connection:
+
+```env
+PORT=3000
+DB_HOST=localhost
+DB_PORT=5432
+DB_USERNAME=your_username
+DB_PASSWORD=your_password
+DB_DATABASE=employee_db
+```
+
+Replace the database credentials with your local PostgreSQL settings.
+
+Ensure the database `employee_db` exists and that your NestJS TypeORM configuration reads these environment variables.
+
+## 4. Run the Application
+
+Start in development mode:
+
+```bash
+npm run start:dev
+```
+
+The server will run at:
+
+`http://localhost:3000`
+
+All API routes use the `/api` prefix.
+
+## 5. API Endpoints
+
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | `/api/employee` | Get all employees | optional pagination supported
+| POST | `/api/employee` | Create an employee |
+| PATCH | `/api/employee/:id` | Update an employee |
+| DELETE | `/api/employee/:id` | Delete an employee |
+
+## 6. Build for Production
+
+```bash
+npm run build
+npm run start:prod
+```
+
+## Technologies Used
+
+- NestJS
+- TypeScript
+- TypeORM
+- PostgreSQL
+- class-validator
+- class-transformer
+
 
 When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
 
